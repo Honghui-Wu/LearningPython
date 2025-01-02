@@ -39,6 +39,7 @@ def crossroad():
 
 def lake():
     """Handle the second decision at the lake."""
+    print("You've come to a lake. There is an island in the middle of the lake.")
     choice = input('    Type "swim" to swim across. Type "wait" to wait for a boat.\n').lower()
     if choice == "wait":
         doors()
