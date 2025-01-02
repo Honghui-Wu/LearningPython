@@ -28,18 +28,39 @@ def treature_island_game():
 
 def crossroad():
     """Handle the first decision at the crossroad."""
-    choice = input('You are at a cross road. Where do you want to go?\nType "left" or "right": ').lower()
+    choice = input('You are at a cross road. Where do you want to go?\nType "left" or "right": \n').lower()
     if choice == "left":
         lake()
     elif choice == "right":
         print("You fall into a hole. Game over.")
     else:
-        print("Invalid choice. Please choose 'left' or 'right'.")
+        print("Invalid choice. Please type in 'left' or 'right'.")
         crossroad()
 
 def lake():
     """Handle the second decision at the lake."""
     choice = input('    Type "swim" to swim across. Type "wait" to wait for a boat.\n').lower()
+    if choice == "wait":
+        doors()
+    elif choice == "swim":
+        print("You got attacked by a crocodile. Game over.")
+    else:
+        print("Invalid choice. Please type in 'wait' or 'swim'.")
+        lake()
+
+def doors():
+    print("You arrived at the island unharmed. There is a house with three doors.")
+    choice = input("    One red, one yellow, and one blue. Which color do you choose?\n").lower()
+    if choice == "yellow":
+        print("You find the treasure! You win.")
+    elif choice == "red":
+        print("You enter a room in fire. Game over.")
+    elif choice == "blue":
+        print("You enter a room full of beasts. Game over.")
+    else:
+        print("Invalid choice. Please type in 'red', 'yellow', or 'blue'.")
+        doors()
+
 
 if __name__ == "__main__":
     treature_island_game()
